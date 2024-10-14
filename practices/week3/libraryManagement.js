@@ -28,8 +28,6 @@ function listAvailableBooks() {
     return library.filter((book) => book.isAvailable)
 }
 
-
-
 // Test cases
 addBook('The Great Gatsby', 'F. Scott Fitzgerald')
 addBook('1984', 'George Orwell')
