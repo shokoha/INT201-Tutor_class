@@ -3,7 +3,12 @@
     console.log('Operators practice')
 
     function modifyNumber(num) {
-        // Your logic here
+        let temp = num
+        temp += 10
+        temp -= 5
+        temp *= 3
+        temp /= 2
+        return temp
     }
 
     console.log(modifyNumber(5))
@@ -11,7 +16,8 @@
     console.log(modifyNumber(-5))
 
     function checkEvenOrOdd(num) {
-        // Your logic here
+        let mode = num % 2
+        return mode === 0 ? "Even" : "Odd"
     }
 
     console.log(checkEvenOrOdd(5))
@@ -38,6 +44,11 @@
 
     function getUserPreferences(userProfile) {
         // Your logic here
+        return {
+            name: userProfile?.name ?? "Guest",
+            age: userProfile?.age ?? 18,
+            userEmailNotification : userProfile?.preferences?.notifications?.email  ? "notifications enabled" : "notifications disabled"
+        }
     }
 
     console.log(getUserPreferences(userProfile))
@@ -50,13 +61,17 @@
 
     function rollDice() {
         // Your logic here
+        random = Math.random()*6 + 1
+        result = Math.floor(random) 
+        return result
     }
     console.log(rollDice()) //should return a random number between 1 and 6
 
     function generateRandomNumber(min, max) {
         // Your logic here
+        return  Math.floor(Math.random()*(max-min+1)) + min
     }
-    console.log(generateRandomNumber(1, 100))
+    console.log(generateRandomNumber(50, 55))
 }
 
 //Conditional practice
@@ -65,7 +80,10 @@
     console.log('Conditional practice')
 
     function categorizeAge(age) {
-        // Your logic here
+        return age < 13 ? "child" :
+            age <= 19 ? "teen" :
+            age <= 59 ? "adult" :
+            "senior"  
     }
 
     // Example Calls:
@@ -89,7 +107,11 @@
     }
     arr.forEach((n) => console.log('foreach', n))
 
-    function sumArray(arr) {}
+    function sumArray(arr) {
+        let sum=0
+        arr.forEach((num) => (sum += num))
+        return sum
+    }
 
     const numbers = [5, 10, 15, 20]
     console.log('The sum is:', sumArray(numbers)) // Example output: The sum is: 50
@@ -101,16 +123,30 @@
     console.log('Comparing practice')
 
     function areObjectsEqual(obj1, obj2) {
-        // Your logic here
+        const keys1 = Object.keys(obj1)
+        const keys2 = Object.keys(obj2)
+        if (keys1.length !== keys2.length) return false
+        for (let key of keys1) {
+            if (!obj2.hasOwnProperty(key)) return false
+            if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
+                if (!areObjectsEqual(obj1[key], obj2[key])) {
+                    return false
+                }
+            }  else {
+                if(obj1[key]!==obj2[key]) return false
+            }
+        }return true
     }
+ 
+}
 
     const obj1 = { name: 'John', age: 30 }
     const obj2 = { age: 30, name: 'John' }
-    const obj3 = { name: 'John', age: 25 }
+    const obj3 = { name: 'John', age: 23 }
 
     console.log(areObjectsEqual(obj1, obj2)) // should return true
     console.log(areObjectsEqual(obj1, obj3)) // should return false
-}
+
 
 //Array
 {
@@ -266,6 +302,19 @@
     {
         function groupByParity(arr) {
             // Your logic here
+            let arrOdd = []
+            let arrEven = []
+            arr.forEach(function (num) {
+                
+                temp = num % 2
+                if (temp === 0) {
+                     arrEven.push(num)
+                } else {
+                     arrOdd.push(num)
+                }
+              
+            })
+            return [ arrEven,arrOdd ]
         }
 
         const numbers = [1, 2, 3, 4, 5, 6]
@@ -275,7 +324,7 @@
     //2. findMax element in an array
     {
         function findMax(arr) {
-            // Your logic here
+            
         }
 
         const numbers = [1, 5, 3, 9, 2]

@@ -1,5 +1,9 @@
 function totalPages(arrayItems, rowsPerPage) {
-    //your code here
+    if (arrayItems === undefined || arrayItems === null)  return undefined
+    if (!rowsPerPage || rowsPerPage === 0) return 1
+
+    return Math.ceil( arrayItems.length / rowsPerPage)
+    
 }
 
 const arrayItems = Array.from({ length: 40 }, (_, i) => i + 1);

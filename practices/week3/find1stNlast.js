@@ -1,5 +1,21 @@
 function findFirstAndLast(str, char) {
-    // your code here
+    //! way #1
+    {
+        // const arrays = [...str]
+        // return {
+        //     firstIndex: arrays.indexOf(char),
+        //     lastIndex: arrays.lastIndexOf(char)
+        // }
+    }
+    //! way #2
+    {
+        
+        return {
+            firstIndex: str.indexOf(char),
+            lastIndex: str.lastIndexOf(char)
+        }
+    }
+   
 }
 
 // Test case

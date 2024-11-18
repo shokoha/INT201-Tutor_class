@@ -3,28 +3,35 @@ let library = []
 
 // Function to add a new book
 function addBook(title, author) {
-    // Your code here
+    const book = { title, author, isAvailable: true }
+    library.push(book)
 }
 
 // Function to borrow a book by title
 function borrowBook(title) {
-    // Your code here
+    const book = library.find((book) => book.title === title)
+    if (book) {
+        book.isAvailable = false
+    }
 }
 
 // Function to return a book by title
 function returnBook(title) {
-    // Your code here
+    const book = library.find((book) => book.title === title)
+    if (book) {
+        book.isAvailable = true
+    }
 }
 
 // Function to list all available books
 function listAvailableBooks() {
-    // Your code here
+    return library.filter((book) => book.isAvailable)
 }
 
 // Test cases
 addBook('The Great Gatsby', 'F. Scott Fitzgerald')
 addBook('1984', 'George Orwell')
 borrowBook('1984')
-listAvailableBooks() // Expected output: List of available books except "1984"
+console.log(listAvailableBooks()) // Expected output: List of available books except "1984"
 returnBook('1984')
-listAvailableBooks() // Expected output: All books including "1984"
+console.log(listAvailableBooks()) // Expected output: All books including "1984"
