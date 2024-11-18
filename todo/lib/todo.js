@@ -1,21 +1,23 @@
 class Todo {
     static runningId = 1
-
-    constructor(id, description, done = false) {
-        this.id = id ?? Todo.runningId++
-        this.description = description
+    constructor(id, desc = 'N/A', done = false) {
+        if (id === undefined) {
+            id = Todo.runningId++
+        }
+        this.id = id
+        this.description = desc
         this.done = done
     }
     getTodo() {
-        return this
+        return { id: this.id, description: this.description }
     }
-    setDescription(newDescription) {
-        this.description = newDescription
+    setDescription(desc) {
+        this.description = desc
     }
-    setDone(value) {
-        this.done = value
+    setDone(done) {
+        this.done = done
     }
 }
 
-export { Todo }
 // module.exports = Todo
+export default Todo

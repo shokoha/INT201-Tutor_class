@@ -1,19 +1,21 @@
-import { Todo } from './todo.js'
 // const Todo = require('./todo.js')
+import Todo from './todo.js'
 function todoManagement() {
-    let todos = []
+    const todos = []
     function addTodo(id, desc, done) {
-        todos.push(new Todo(id, desc, done))
-        return todos[todos.length - 1].id
+        const todo = new Todo(id, desc, done)
+        todos.push(todo)
+        return todo.id
     }
     function findTodo(searchId) {
         return todos.find((todo) => todo.id === searchId)
     }
-    function findTodoIndex(searchId) {
+    function findIndexTodo(searchId) {
         return todos.findIndex((todo) => todo.id === searchId)
     }
     function removeTodo(removeId) {
-        todos = todos.filter((todo) => todo.id !== removeId)
+        const foundIndex = findIndexTodo(removeId)
+        todos.splice(foundIndex, 1)
     }
     function getTodos() {
         return todos
@@ -25,18 +27,8 @@ function todoManagement() {
         return todos.filter((todo) => !todo.done).length
     }
     function clearTodo() {
-        todos = []
+        todos.splice(0, todos.length)
     }
-    return {
-        addTodo,
-        findTodo,
-        findTodoIndex,
-        removeTodo,
-        getTodos,
-        getNumberOfDone,
-        getNumberOfNotDone,
-        clearTodo
-    }
+    return { addTodo, findTodo, removeTodo, getTodos, getNumberOfDone, getNumberOfNotDone, clearTodo }
 }
-export { todoManagement }
-// module.exports = todoManagement
+export default { todoManagement }

@@ -1,31 +1,31 @@
 function showTodoItem(newId, newDescription) {
-    const todoList = document.getElementById('listTodo')
-    const newDiv = document.createElement('div')
-    newDiv.setAttribute('id', `${newId}`)
-    newDiv.setAttribute('class', 'todoItem')
+    const todoList = document.querySelector('#listTodo')
+    const todoItem = document.createElement('div')
+    todoItem.setAttribute('id', newId)
+    todoItem.setAttribute('class', 'todoItem')
 
-    const newP = document.createElement('p')
-    newP.textContent = newDescription
-    newDiv.appendChild(newP)
+    const todoDesc = document.createElement('p')
+    todoDesc.textContent = newDescription
+    todoItem.appendChild(todoDesc)
 
-    const statusBtn = document.createElement('button')
-    statusBtn.textContent = 'Not Done'
-    newDiv.appendChild(statusBtn)
+    const todoStatus = document.createElement('button')
+    todoStatus.textContent = 'Not Done'
+    todoItem.appendChild(todoStatus)
 
     const removeBtn = document.createElement('button')
-    removeBtn.textContent = 'Remove'
-    newDiv.appendChild(removeBtn)
+    removeBtn.textContent = 'remove'
+    todoItem.appendChild(removeBtn)
 
-    todoList.appendChild(newDiv)
+    todoList.appendChild(todoItem)
 }
 
 function showNumberOfDone(numberOfDone) {
-    const doneNumber = document.getElementById('done')
-    doneNumber.textContent += numberOfDone
+    const done = document.querySelector('#done')
+    done.textContent = `Number of Done:${numberOfDone}`
 }
 function showNumberOfNotDone(numberOfNotDone) {
-    const notDoneNumber = document.getElementById('notDone')
-    notDoneNumber.textContent += numberOfNotDone
+    const notDone = document.querySelector('#notDone')
+    notDone.textContent = `Number of Not Done:${numberOfNotDone}`
 }
 
 export { showTodoItem, showNumberOfDone, showNumberOfNotDone }
