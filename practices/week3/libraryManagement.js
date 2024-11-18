@@ -31,7 +31,14 @@ function listAvailableBooks() {
 // Test cases
 addBook('The Great Gatsby', 'F. Scott Fitzgerald')
 addBook('1984', 'George Orwell')
+<<<<<<< HEAD
 borrowBook('1984')
 console.log(listAvailableBooks()) // Expected output: List of available books except "1984"
 returnBook('1984')
 console.log(listAvailableBooks()) // Expected output: All books including "1984"
+=======
+borrowBook('19846')
+console.log(listAvailableBooks()) // Expected output: List of available books except "1984"
+returnBook('1984')
+console.log(listAvailableBooks()) // Expected output: All books including "1984"
+>>>>>>> 27b306ee506a449af2b6e59e13318b4dfe26df03

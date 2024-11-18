@@ -1,4 +1,5 @@
 function findFirstAndLast(str, char) {
+<<<<<<< HEAD
     //! way #1
     {
         // const arrays = [...str]
@@ -16,7 +17,12 @@ function findFirstAndLast(str, char) {
         }
     }
    
+=======
+    const firstIndex = str.indexOf(char)
+    const lastIndex = str.lastIndexOf(char)
+    return { firstIndex, lastIndex }
+>>>>>>> 27b306ee506a449af2b6e59e13318b4dfe26df03
 }
 
 // Test case
-console.log(findFirstAndLast('javascript', 'a')) // output: { firstIndex: 1, lastIndex: 3 }
+console.log(findFirstAndLast('javascript', 'z')) // output: { firstIndex: 1, lastIndex: 3 }
