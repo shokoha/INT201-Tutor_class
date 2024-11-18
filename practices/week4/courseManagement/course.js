@@ -1,14 +1,29 @@
-class CourseManagement {}
+class CourseManagement {
+
+    static id = 0
+    constructor() {
+        this.courses = []
+    }
+    createCourse(courseId, courseTitle = 'untitled', courseTerm = '2-2565') {
+        this.courses.push({courseId,courseTitle,courseTerm,registeredStudents:[]})
+    }
+    registerCourseWithOneStudent(courstId, studentId) {
+        
+    }
+    getCourses() {
+        return this.courses
+    }
+}
 
 // test cases
 // {
 //     // Test Case 1: Create a new CourseManagement instance and add courses
-//     const cm = new CourseManagement()
-//     console.log(cm.createCourse('INT201', 'Client Side I', '1-2565')) // Expected: undefined (course created)
-//     console.log(cm.createCourse('INT202', 'Server Side I', '1-2565')) // Expected: undefined (course created)
-//     console.log(cm.createCourse('Gen101')) // Expected: undefined (course created)
-//     console.log(cm.createCourse('INT203')) // Expected: undefined (course created)
-//     console.log('-----------------------------------------------------')
+    const cm = new CourseManagement()
+    console.log(cm.createCourse('INT201', 'Client Side I', '1-2565')) // Expected: undefined (course created)
+    console.log(cm.createCourse('INT202', 'Server Side I', '1-2565')) // Expected: undefined (course created)
+    console.log(cm.createCourse('Gen101')) // Expected: undefined (course created)
+    console.log(cm.createCourse('INT203')) // Expected: undefined (course created)
+    console.log('-----------------------------------------------------')
 
 //     // Test Case 2: Register students for courses
 //     console.log(cm.registerCourseWithOneStudent('INT201', 1001)) // Expected: 1 (student registered)
@@ -37,7 +52,7 @@ class CourseManagement {}
 //     console.log('-----------------------------------------------------')
 
 //     // Test Case 6: Get all courses
-//     console.log(cm.getCourses()) // Expected: array of remaining courses
+    console.log(cm.getCourses()) // Expected: array of remaining courses
 //     console.log('-----------------------------------------------------')
 
 //     // Test Case 7: Get a specific course
