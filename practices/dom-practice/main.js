@@ -9,9 +9,9 @@ const initGame = () => {
     // 1. register event for searching and adding
     const registerEvent = () => {}
     // 2. Function to display one games in the display area
-    const displayGame = (game) => {}
+    const displayGame = (gameItem) => {}
     // 3. Function to display all existing games in the display area
-    const displayGames = (gamesResult) => {}
+    const displayGames = (gameItems) => {}
     // 4. Function to search and display matching games
     const searchGames = (event) => {}
     // 5. Function to add a new games
