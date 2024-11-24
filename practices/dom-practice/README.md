@@ -36,41 +36,46 @@ This function displays the list of games:
 - Iterates over the `gameItems` array and calls `displayGame(gameItem)` for each game.
 
 Example structure for displaying the games:
+
 ```html
 <div id="game-list">
   <!-- Game list will be displayed here -->
 </div>
 
 ```
-- **displayGame(gameItem)** - Dynamically creates HTML elements for a single game based on the following structure:
-    ```
+#### 4. **displayGame(gameItem)**
+Dynamically creates HTML elements for a single game based on the following structure:
+```html
     <div class="game-item">
-    <p>name price THB</p>
-    <button id="name-price" class="remove-btn">Remove</button>
+      <p>name price THB</p>
+      <button id="name-price" class="remove-btn">Remove</button>
     </div>
-    ```
+```
 
-Creates a <div> with the class game-item.
+Creates a ```<div>``` with the class game-item.
 Adds the game name, price, and a "Remove" button:
-The "Remove" button is a <button> element with:
+The "Remove" button is a ```<button>``` element with:
 A class of remove-btn.
 An id attribute that concatenates the game name and price with a hyphen (-).
 Example id for the game "Splatoon 2 550": id="Splatoon 2-550".
 Adds an event handler to the "Remove" button that calls the removeGame function when clicked.
 Example HTML for a game {name: 'Splatoon 2', price: 550}:
 
-    ```
+```html
     <div class="game-item">
-    <p>Splatoon 2 550 THB</p>
-    <button id="Splatoon 2-550" class="remove-btn">Remove</button>
+      <p>Splatoon 2 550 THB</p>
+      <button id="Splatoon 2-550" class="remove-btn">Remove</button>
     </div>
-    ```
-- **searchGames(event)** - This function filters games based on a search keyword:
-Calls the searchGames(keyword) function in GameManagement using the search input value.
-Displays the matching games in real time by calling displayGames(gameItems).
-- **removeGame(event)** - This function removes a game:
-Triggered by clicking the "Remove" button next to a game's name.
-Retrieves the game's name and price from the id attribute of the clicked button.
-Removes the game from the list using the removeGame(deleteGame) method in GameManagement.
-Updates the display area by removing the <div> element for the deleted game.
+```
+
+### 5. **searchGames(event)**
+This function filters games based on a search keyword:
+- Calls the searchGames(keyword) function in GameManagement using the search input value.
+- Displays the matching games in real time by calling displayGames(gameItems).
+### 6. **removeGame(event)**
+This function removes a game:
+- Triggered by clicking the "Remove" button next to a game's name.
+- Retrieves the game's name and price from the id attribute of the clicked button.
+- Removes the game from the list using the removeGame(deleteGame) method in GameManagement.
+- Updates the display area by removing the ```<div>``` element for the deleted game.
 
