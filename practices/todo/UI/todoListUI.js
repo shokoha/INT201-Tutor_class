@@ -28,5 +28,11 @@ function showNumberOfNotDone(numberOfNotDone) {
     notDone.textContent = `Number of Not Done:${numberOfNotDone}`
 }
 
-export { showTodoItem, showNumberOfDone, showNumberOfNotDone }
-// module.exports = { showTodoItem, showNumberOfDone, showNumberOfNotDone }
+//add on 
+function removeTodoItem(removeId) {
+    const todoItem = document.getElementById(removeId)
+    todoItem.remove()
+}
+
+export { showTodoItem, showNumberOfDone, showNumberOfNotDone, removeTodoItem }
+// module.exports = { showTodoItem, showNumberOfDone, showNumberOfNotDone, removeTodoItem }

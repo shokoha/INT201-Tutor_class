@@ -1,5 +1,5 @@
-// const Todo = require('./todo.js')
-import Todo from './todo.js'
+// const Todo = require('./Todo.js')
+import Todo from './Todo.js'
 function todoManagement() {
     const todos = []
     function addTodo(id, desc, done) {
@@ -29,6 +29,12 @@ function todoManagement() {
     function clearTodo() {
         todos.splice(0, todos.length)
     }
-    return { addTodo, findTodo, removeTodo, getTodos, getNumberOfDone, getNumberOfNotDone, clearTodo }
+
+    //add on
+    function setItemToDone(doneId) {
+        const todo = findTodo(doneId)
+        todo.setDone(true)
+    }
+    return { addTodo, findTodo, removeTodo, getTodos, getNumberOfDone, getNumberOfNotDone, clearTodo, setItemToDone }
 }
-export default { todoManagement }
+export default  todoManagement 
